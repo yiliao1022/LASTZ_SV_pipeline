@@ -6,10 +6,17 @@ This pipeline can be used to roughly detect structral variations, such as insert
 
 ## Dependency 
 
-LASTZ: You can download from http://www.bx.psu.edu/miller_lab/dist/README.lastz-1.02.00/README.lastz-1.02.00a.html;
-RepeatMasker: You can download from http://www.repeatmasker.org;
+LASTZ: You can download from http://www.bx.psu.edu/miller_lab/dist/README.lastz-1.02.00/README.lastz-1.02.00a.html. 
+
+RepeatMasker: You can download from http://www.repeatmasker.org.
+
 KentUtils: You can download from http://hgdownload.soe.ucsc.edu/admin/exe/.
 
 ## HOW TO USE  
 
 Firstly, you need the soft-masked genome sequences for both reference and query. This can significantly reduce the runing time for Lastz alignment. 
+
+RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $reference
+
+RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $query
+ 
