@@ -14,21 +14,24 @@ KentUtils: You can download from http://hgdownload.soe.ucsc.edu/admin/exe/.
 
 ## How to use  
 
-Firstly, you need the soft-masked genome sequences for both reference and query. This can significantly reduce the runing time for Lastz alignment. 
+### Firstly, you need the soft-masked genome sequences for both reference and query. This can significantly reduce the runing time for Lastz alignment. 
 
 RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $reference
 
 RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $query
  
 
+### Second, performing the pairwise alignment of reference and query sequences.
+
+
+### Third, running the SV discovery steps with the bash script.
 
 
 
+## Further efforts
 
-##Further efforts
+Further efforts will include: 1) Inter/Intra-Chromosomal duplications and other complex SVs; 2) genotyping SVs with short or long reads methods; 3) multiple genome comparsion.
 
-Further efforts needed to address the following targets: 1) Inter/Intra-Chromosomal duplications and other complex SVs; 2) genotyping SVs with short or long reads methods; 3) multiple genome comparsion.
-
-##Contact and citations
+## Contact and citations
 
 If you have any question, please feel free to contact yiliao1022@gmail.com
