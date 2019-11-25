@@ -20,7 +20,10 @@ export REF=/your/paths/to/reference
 
 export Sam=/your/paths/to/query
 
-RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $REF
+export TE=/your/paths/to/TEcustomlib
+
+RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $REF 
+
 RepeatMasker -e crossmatch -s -pa 64 -xsmall -gff -lib $TE $Sam
  
 ### Second, performing the pairwise alignment of reference and query sequences.
