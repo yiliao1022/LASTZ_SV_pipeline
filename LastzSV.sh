@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export REF=/data/users/liaoy12/liaoy12/TAD/UsingNaoassemblies/ref/Dere.fa
-export Sam=/data/users/liaoy12/liaoy12/TAD/genomes/A1.fa
+#export REF=/data/users/liaoy12/liaoy12/TAD/UsingNaoassemblies/ref/Dere.fa
+#export Sam=/data/users/liaoy12/liaoy12/TAD/genomes/A1.fa
 export Rname="Target"
 export Qname="Query"
 
@@ -39,19 +39,19 @@ sed -i 's/net/gapnet/g' synnet4.txt
 sed -i 's/^    gap/gap/g' synnet4.txt
 sed -i 's/^     fill/fill/g' synnet4.txt
 
-perl ~/Pipeplines/Lastz_SV/SVcallerl2.pl -input synnet2.txt -output level2 -refname $Rname -queryname $Qname -refseq $REF
-perl ~/Pipeplines/Lastz_SV/SVcallerl1.pl -input synnet3.txt -output level3 -refname $Rname -queryname $Qname -refseq $REF
-perl ~/Pipeplines/Lastz_SV/SVcallerl2.pl -input synnet4.txt -output level4 -refname $Rname -queryname $Qname -refseq $REF
-perl ~/Pipeplines/Lastz_SV/SVcallerl1.pl -input synnet1.txt -output level1 -refname $Rname -queryname $Qname -refseq $REF
+perl ../src/SVcallerl2.pl -input synnet2.txt -output level2 -refname $Rname -queryname $Qname -refseq $REF
+perl ../src/SVcallerl1.pl -input synnet3.txt -output level3 -refname $Rname -queryname $Qname -refseq $REF
+perl ../src/SVcallerl2.pl -input synnet4.txt -output level4 -refname $Rname -queryname $Qname -refseq $REF
+perl ../src/SVcallerl1.pl -input synnet1.txt -output level1 -refname $Rname -queryname $Qname -refseq $REF
 
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level1.Complex.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level1.Deletion.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level2.CNV.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level2.INV.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level3.Complex.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level3.Deletion.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level4.CNV.txt
-perl ~/Pipeplines/Lastz_SV/filter.pl Net_top.txt level4.INV.txt
+perl ../src/filter.pl Net_top.txt level1.Complex.txt
+perl ../src/filter.pl Net_top.txt level1.Deletion.txt
+perl ../src/filter.pl Net_top.txt level2.CNV.txt
+perl ../src/filter.pl Net_top.txt level2.INV.txt
+perl ../src/filter.pl Net_top.txt level3.Complex.txt
+perl ../src/filter.pl Net_top.txt level3.Deletion.txt
+perl ../src/filter.pl Net_top.txt level4.CNV.txt
+perl ../src/filter.pl Net_top.txt level4.INV.txt
 
 cat level1.Complex.txt.synteny.out level3.Complex.txt.synteny.out > $Rname.$Qname.complex.sv
 cat level1.Deletion.txt.synteny.out level3.Deletion.txt.synteny.out > $Rname.$Qname.deletion.sv
