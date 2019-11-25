@@ -2,7 +2,7 @@
 
 ## Description
 
-This pipeline can be used to roughly detect structral variations, such as insertions, deletions, copy Number Variations (i.e. mostly tandem duplications),inversions,and those with breakpoints unambiguously being defined ones, using high-quality chromosome-level assemblies between the genomes of closely related species or within species. It is designed mainly based on the Lastz/Chain/Net tools. Currently, It works well for rice (Oryza sativa), fruitfly (Drosophila melanogaster) and Brassica genomes. 
+This pipeline can be used to roughly detect structral variations, such as insertions, deletions, copy Number Variations (i.e. mostly tandem duplications),inversions,and those with breakpoints unambiguously being defined, using high-quality chromosome-level assemblies between the genomes of closely related species or within species. It is designed mainly based on the Lastz/Chain/Net tools. Currently, It works well for rice (Oryza sativa), fruitfly (Drosophila melanogaster) and Brassica genomes. 
 
 ## Dependency 
 
